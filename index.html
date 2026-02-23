@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehdi Affane | Portfolio</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Subtle Background Animation -->
+    <div class="bg-lines"></div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="navbar container">
+            <div class="logo">MA.</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="navHome">Home</a></li>
+                <li><a href="#about" data-i18n="navAbout">About</a></li>
+                <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+                <li><a href="#experience" data-i18n="navExperience">Experience</a></li>
+                <li><a href="#education" data-i18n="navEducation">Education</a></li>
+                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="lang-switch">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="ar">AR</option>
+                    </select>
+                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section (Depth Reveal) -->
+        <section id="home" class="hero gsap-section">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="hero-name">
+                    <!-- Changed name per user request -->
+                    <span class="name-text" data-i18n="heroName">Mehdi Affane</span>
+                    <div class="name-glow"></div>
+                </h1>
+                <h2 class="hero-subtitle" data-i18n="heroSubtitle">
+                    Software Development Student | Future Full-Stack Developer
+                </h2>
+                <div class="hero-typing-container">
+                    <span class="typing-text" id="typed-output"></span>
+                </div>
+                <div class="hero-scroll">
+                    <div class="scroll-mouse"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Slide from LEFT) -->
+        <section id="about" class="about gsap-section">
+            <div class="container container-flex">
+                <div class="section-header align-left">
+                    <h2 class="section-title" data-i18n="navAbout">About</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="base-card glass-panel gsap-reveal-left">
+                        <p class="about-text" data-i18n="aboutText">
+                            Passionate about technology since childhood and currently studying Multiplatform Application
+                            Development (DAM). I am building strong foundations in programming, databases and software
+                            design. I am seeking my first professional IT opportunity to contribute my discipline,
+                            analytical mindset and continuous growth mentality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (Slide from RIGHT) -->
+        <section id="skills" class="skills gsap-section">
+            <div class="container">
+                <div class="section-header align-right">
+                    <h2 class="section-title" data-i18n="navSkills">Skills</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-grid gsap-reveal-right">
+                    <!-- Hard Skills -->
+                    <div class="base-card glass-panel">
+                        <h3 class="column-title" data-i18n="progFundTitle">Programming Fundamentals</h3>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sJava">Java (OOP
+                                    Fundamentals)</span><span>75%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sSql">SQL & Relational Databases
+                                    (MySQL)</span><span>70%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sHtml">HTML5</span><span>85%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sCss">CSS3</span><span>80%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sJs">Basic JavaScript</span><span>60%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span data-i18n="sGit">Git & GitHub</span><span>65%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="base-card glass-panel">
+                        <h3 class="column-title" data-i18n="softSkillsTitle">Soft Skills</h3>
+                        <div class="tags-container">
+                            <span class="tag" data-i18n="ssDisc">Discipline</span>
+                            <span class="tag" data-i18n="ssAdapt">Adaptability</span>
+                            <span class="tag" data-i18n="ssLearn">Continuous Learning</span>
+                            <span class="tag" data-i18n="ssAnaly">Analytical Thinking</span>
+                            <span class="tag" data-i18n="ssResp">Responsibility</span>
+                            <span class="tag" data-i18n="ssAlgo">Algorithmic Thinking</span>
+                            <span class="tag" data-i18n="ssProblem">Problem Solving</span>
+                            <span class="tag" data-i18n="ssAgile">Basic Agile Concepts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section (Zoom + Depth) -->
+        <section id="experience" class="experience gsap-section">
+            <div class="container container-flex">
+                <div class="section-header align-center">
+                    <h2 class="section-title" data-i18n="navExperience">Experience</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-node gsap-reveal-depth left-node">
+                        <div class="timeline-dot"></div>
+                        <div class="base-card glass-panel">
+                            <h3 data-i18n="exp1Role">Delivery Driver</h3>
+                            <span class="timeline-date" data-i18n="exp1Date">2023 – Present</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node gsap-reveal-depth right-node">
+                        <div class="timeline-dot"></div>
+                        <div class="base-card glass-panel">
+                            <h3 data-i18n="exp2Role">Warehouse Assistant</h3>
+                            <span class="timeline-date" data-i18n="exp2Date">2018 – 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section (Slide from LEFT + Vertical Motion) -->
+        <section id="education" class="education gsap-section">
+            <div class="container">
+                <div class="section-header align-left">
+                    <h2 class="section-title" data-i18n="navEducation">Education</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="edu-grid">
+                    <div class="base-card glass-panel edu-card gsap-reveal-diagonal">
+                        <div class="edu-icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-details">
+                            <h3 data-i18n="edu1School">IES San Blas</h3>
+                            <span class="edu-date" data-i18n="edu1Date">2025 – Present</span>
+                            <p class="edu-desc" data-i18n="edu1Desc">Multiplatform Application Development (DAM)</p>
+                        </div>
+                    </div>
+
+                    <div class="base-card glass-panel edu-card gsap-reveal-diagonal">
+                        <div class="edu-icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-details">
+                            <h3 data-i18n="edu2School">IES Mare Nostrum</h3>
+                            <span class="edu-date" data-i18n="edu2Date">Past</span>
+                            <p class="edu-desc" data-i18n="edu2Desc">General Studies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Slide from RIGHT) -->
+        <section id="contact" class="contact gsap-section">
+            <div class="container">
+                <!-- Using a specific wrapper for contact rather than base-card because of its unique split layout, but conforming to base principles -->
+                <div class="contact-frame base-card gsap-reveal-right">
+                    <div class="contact-info">
+                        <div class="section-header align-left">
+                            <h2 class="section-title" data-i18n="contactTitle">Contact Me</h2>
+                            <div class="title-underline" style="margin-left: 0;"></div>
+                        </div>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:mehdiaffane2020@gmail.com">mehdiaffane2020@gmail.com</a>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+34640605711">+34 640 60 57 11</a>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper glass-panel">
+                        <form id="contactForm" onsubmit="event.preventDefault();">
+                            <div class="input-container">
+                                <input type="text" id="name" required autocomplete="off">
+                                <label for="name" class="floating-label" data-i18n="contactName">Name</label>
+                                <span class="input-line"></span>
+                            </div>
+                            <div class="input-container">
+                                <input type="email" id="email" required autocomplete="off">
+                                <label for="email" class="floating-label" data-i18n="contactEmail">Email</label>
+                                <span class="input-line"></span>
+                            </div>
+                            <div class="input-container">
+                                <textarea id="message" required rows="4" autocomplete="off"></textarea>
+                                <label for="message" class="floating-label" data-i18n="contactMsg">Message</label>
+                                <span class="input-line"></span>
+                            </div>
+                            <button type="submit" class="submit-btn glow-hover" data-i18n="contactSend">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Digital Screen Assistant -->
+    <div id="screen-assistant" class="screen-assistant">
+        <div class="screen-speech-bubble" id="screen-speech"></div>
+        <div class="screen-monitor">
+            <div class="screen-inner">
+                <div class="screen-eyes">
+                    <div class="eye-box">
+                        <div class="pupil-dot"></div>
+                    </div>
+                    <div class="eye-box">
+                        <div class="pupil-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
