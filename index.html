@@ -4,298 +4,431 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mehdi Affane - Junior Developer Portfolio">
     <title>Mehdi Affane | Portfolio</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <!-- Use Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&display=swap"
         rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- Subtle Background Animation -->
-    <div class="bg-lines"></div>
+<body class="ltr-layout">
+    <div class="ambient-background" id="ambient-bg">
+        <div class="subtle-moon parallax-bg" data-speed="0.005"></div>
+        <div class="glow glow-1 parallax-bg" data-speed="0.02"></div>
+        <div class="glow glow-2 parallax-bg" data-speed="-0.03"></div>
+        <div class="glow glow-3 parallax-bg" data-speed="0.01"></div>
+        <div class="particles" id="particles"></div>
+        <div class="noise-overlay"></div>
+    </div>
 
-    <!-- Navigation -->
-    <header id="header">
-        <nav class="navbar container">
-            <div class="logo">MA.</div>
-            <ul class="nav-links">
-                <li><a href="#home" data-i18n="navHome">Home</a></li>
-                <li><a href="#about" data-i18n="navAbout">About</a></li>
-                <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
-                <li><a href="#experience" data-i18n="navExperience">Experience</a></li>
-                <li><a href="#education" data-i18n="navEducation">Education</a></li>
-                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
-            </ul>
-            <div class="nav-right">
-                <div class="lang-selector">
-                    <i class="fas fa-globe"></i>
-                    <select id="lang-switch">
-                        <option value="en">EN</option>
-                        <option value="es">ES</option>
-                        <option value="ar">AR</option>
-                    </select>
-                </div>
-                <div class="hamburger"><i class="fas fa-bars"></i></div>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">MA .</div>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+    </nav>
 
-    <main>
-        <!-- Hero Section (Depth Reveal) -->
-        <section id="home" class="hero gsap-section">
-            <div class="hero-shapes">
-                <div class="shape shape-1"></div>
-            </div>
-            <div class="container hero-content">
+    <main class="smooth-scroll-container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section section-observe">
+            <div class="hero-content parallax-content" data-speed="0.05">
                 <h1 class="hero-name">
-                    <!-- Changed name per user request -->
-                    <span class="name-text" data-i18n="heroName">Mehdi Affane</span>
-                    <div class="name-glow"></div>
+                    <span class="name-text" data-en="Mehdi Affane" data-es="Mehdi Affane" data-ar="مهدي عفان">Mehdi
+                        Affane</span>
+                    <div class="name-underline"></div>
                 </h1>
-                <h2 class="hero-subtitle" data-i18n="heroSubtitle">
-                    Software Development Student | Future Full-Stack Developer
+                <h2 class="hero-subtitle" data-en="Junior Developer | Learning and Building AI-assisted Projects"
+                    data-es="Desarrollador Junior | Aprendiendo y Creando Proyectos Asistidos por IA"
+                    data-ar="مطور مبتدئ | أتعلم وأبني مشاريع بمساعدة الذكاء الاصطناعي">Junior Developer | Learning and
+                    Building AI-assisted Projects</h2>
+                <div class="typewriter-container">
+                    <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-observe">
+            <div class="container animate-slide-left hover-parallax">
+                <h2 class="section-title">
+                    <span data-en="About Me" data-es="Sobre Mí" data-ar="من أنا">About Me</span>
+                    <div class="title-glow"></div>
                 </h2>
-                <div class="hero-typing-container">
-                    <span class="typing-text" id="typed-output"></span>
-                </div>
-                <div class="hero-scroll">
-                    <div class="scroll-mouse"></div>
+                <div class="glass-card about-card">
+                    <div class="about-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <p class="about-text"
+                        data-en="Passionate about technology. I work on small AI-assisted projects and continuously improve my skills while learning software development. Building a strong foundation for my IT career."
+                        data-es="Apasionado por la tecnología. Trabajo en pequeños proyectos asistidos por IA y mejoro continuamente mis habilidades mientras aprendo desarrollo de software. Construyendo una base sólida para mi carrera en TI."
+                        data-ar="شغوف بالتكنولوجيا. أعمل على مشاريع صغيرة بمساعدة الذكاء الاصطناعي وأطور مهاراتي باستمرار أثناء تعلم تطوير البرمجيات. أبني أساسًا قويًا لمستقبلي المهني في مجال تكنولوجيا المعلومات.">
+                        Passionate about technology. I work on small AI-assisted projects and continuously improve my
+                        skills while learning software development. Building a strong foundation for my IT career.</p>
                 </div>
             </div>
         </section>
 
-        <!-- About Section (Slide from LEFT) -->
-        <section id="about" class="about gsap-section">
-            <div class="container container-flex">
-                <div class="section-header align-left">
-                    <h2 class="section-title" data-i18n="navAbout">About</h2>
-                    <div class="title-underline"></div>
-                </div>
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-observe">
+            <div class="container animate-slide-right">
+                <h2 class="section-title">
+                    <span data-en="Skills" data-es="Habilidades" data-ar="المهارات">Skills</span>
+                    <div class="title-glow"></div>
+                </h2>
 
-                <div class="about-grid">
-                    <div class="base-card glass-panel gsap-reveal-left">
-                        <p class="about-text" data-i18n="aboutText">
-                            Passionate about technology since childhood and currently studying Multiplatform Application
-                            Development (DAM). I am building strong foundations in programming, databases and software
-                            design. I am seeking my first professional IT opportunity to contribute my discipline,
-                            analytical mindset and continuous growth mentality.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="skills-grid">
+                    <div class="tech-skills glass-card hover-parallax">
+                        <h3 class="card-title" data-en="Technical Skills" data-es="Habilidades Técnicas"
+                            data-ar="المهارات التقنية">Technical Skills</h3>
 
-        <!-- Skills Section (Slide from RIGHT) -->
-        <section id="skills" class="skills gsap-section">
-            <div class="container">
-                <div class="section-header align-right">
-                    <h2 class="section-title" data-i18n="navSkills">Skills</h2>
-                    <div class="title-underline"></div>
-                </div>
-
-                <div class="skills-grid gsap-reveal-right">
-                    <!-- Hard Skills -->
-                    <div class="base-card glass-panel">
-                        <h3 class="column-title" data-i18n="progFundTitle">Programming Fundamentals</h3>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sJava">Java (OOP
-                                    Fundamentals)</span><span>75%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="75%"></div>
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="40%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sSql">SQL & Relational Databases
-                                    (MySQL)</span><span>70%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="70%"></div>
+                            <div class="skill-info">
+                                <span>HTML5</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="40%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sHtml">HTML5</span><span>85%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="85%"></div>
+                            <div class="skill-info">
+                                <span>CSS3</span>
+                                <span>35%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="35%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sCss">CSS3</span><span>80%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="80%"></div>
+                            <div class="skill-info">
+                                <span>C#</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="25%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sJs">Basic JavaScript</span><span>60%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="60%"></div>
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="20%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span data-i18n="sGit">Git & GitHub</span><span>65%</span></div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" data-width="65%"></div>
+                            <div class="skill-info">
+                                <span>GitHub</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="20%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Soft Skills -->
-                    <div class="base-card glass-panel">
-                        <h3 class="column-title" data-i18n="softSkillsTitle">Soft Skills</h3>
+                    <div class="soft-skills glass-card hover-parallax">
+                        <h3 class="card-title" data-en="Soft Skills" data-es="Habilidades Blandas"
+                            data-ar="المهارات الشخصية">Soft Skills</h3>
                         <div class="tags-container">
-                            <span class="tag" data-i18n="ssDisc">Discipline</span>
-                            <span class="tag" data-i18n="ssAdapt">Adaptability</span>
-                            <span class="tag" data-i18n="ssLearn">Continuous Learning</span>
-                            <span class="tag" data-i18n="ssAnaly">Analytical Thinking</span>
-                            <span class="tag" data-i18n="ssResp">Responsibility</span>
-                            <span class="tag" data-i18n="ssAlgo">Algorithmic Thinking</span>
-                            <span class="tag" data-i18n="ssProblem">Problem Solving</span>
-                            <span class="tag" data-i18n="ssAgile">Basic Agile Concepts</span>
+                            <span class="floating-tag" style="--delay: 0s" data-en="Discipline" data-es="Disciplina"
+                                data-ar="الانضباط">Discipline</span>
+                            <span class="floating-tag" style="--delay: 0.5s" data-en="Continuous Learning"
+                                data-es="Aprendizaje Continuo" data-ar="التعلم المستمر">Continuous Learning</span>
+                            <span class="floating-tag" style="--delay: 1s" data-en="Adaptability"
+                                data-es="Adaptabilidad" data-ar="القدرة على التكيف">Adaptability</span>
+                            <span class="floating-tag" style="--delay: 1.5s" data-en="Analytical Thinking"
+                                data-es="Pensamiento Analítico" data-ar="التفكير التحليلي">Analytical Thinking</span>
+                            <span class="floating-tag" style="--delay: 2s" data-en="Responsibility"
+                                data-es="Responsabilidad" data-ar="المسؤولية">Responsibility</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section (Zoom + Depth) -->
-        <section id="experience" class="experience gsap-section">
-            <div class="container container-flex">
-                <div class="section-header align-center">
-                    <h2 class="section-title" data-i18n="navExperience">Experience</h2>
-                    <div class="title-underline"></div>
-                </div>
+        <!-- Languages Section (NEW) -->
+        <section id="languages" class="skills-section section-observe">
+            <div class="container animate-fade-up">
+                <h2 class="section-title">
+                    <span data-en="Languages" data-es="Idiomas" data-ar="اللغات">Languages</span>
+                    <div class="title-glow"></div>
+                </h2>
 
-                <div class="timeline-container">
-                    <div class="timeline-line"></div>
-
-                    <div class="timeline-node gsap-reveal-depth left-node">
-                        <div class="timeline-dot"></div>
-                        <div class="base-card glass-panel">
-                            <h3 data-i18n="exp1Role">Delivery Driver</h3>
-                            <span class="timeline-date" data-i18n="exp1Date">2023 – Present</span>
-                        </div>
-                    </div>
-
-                    <div class="timeline-node gsap-reveal-depth right-node">
-                        <div class="timeline-dot"></div>
-                        <div class="base-card glass-panel">
-                            <h3 data-i18n="exp2Role">Warehouse Assistant</h3>
-                            <span class="timeline-date" data-i18n="exp2Date">2018 – 2025</span>
-                        </div>
+                <div class="glass-card hover-parallax" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <div class="tags-container" style="justify-content: center; gap: 2rem;">
+                        <span class="floating-tag"
+                            style="--delay: 0s; font-size: 1.15rem; padding: 1.2rem 2.2rem; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                            <span data-en="Spanish:" data-es="Español:" data-ar="الإسبانية:">Spanish:</span>
+                            <strong data-en="Native" data-es="Nativo" data-ar="لغة أم"
+                                style="color: var(--olive-bright);">Native</strong>
+                        </span>
+                        <span class="floating-tag"
+                            style="--delay: 0.5s; font-size: 1.15rem; padding: 1.2rem 2.2rem; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                            <span data-en="Arabic (Algerian):" data-es="Árabe (Argelino):"
+                                data-ar="العربية (الجزائرية):">Arabic (Algerian):</span>
+                            <strong data-en="Native" data-es="Nativo" data-ar="لغة أم"
+                                style="color: var(--olive-bright);">Native</strong>
+                        </span>
+                        <span class="floating-tag"
+                            style="--delay: 1s; font-size: 1.15rem; padding: 1.2rem 2.2rem; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                            <span data-en="English:" data-es="Inglés:" data-ar="الإنجليزية:">English:</span>
+                            <strong data-en="Medium" data-es="Medio" data-ar="متوسط"
+                                style="color: var(--olive-bright);">Medium</strong>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section (Slide from LEFT + Vertical Motion) -->
-        <section id="education" class="education gsap-section">
+        <!-- Education Section -->
+        <section id="education" class="timeline-section section-observe">
             <div class="container">
-                <div class="section-header align-left">
-                    <h2 class="section-title" data-i18n="navEducation">Education</h2>
-                    <div class="title-underline"></div>
-                </div>
+                <h2 class="section-title animate-fade-up">
+                    <span data-en="Education" data-es="Educación" data-ar="التعليم">Education</span>
+                    <div class="title-glow"></div>
+                </h2>
 
-                <div class="edu-grid">
-                    <div class="base-card glass-panel edu-card gsap-reveal-diagonal">
-                        <div class="edu-icon-wrapper">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="timeline">
+                    <!-- Education 1 -->
+                    <div class="timeline-item left animate-slide-left delay-1">
+                        <div class="timeline-node node-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
                         </div>
-                        <div class="edu-details">
-                            <h3 data-i18n="edu1School">IES San Blas</h3>
-                            <span class="edu-date" data-i18n="edu1Date">2025 – Present</span>
-                            <p class="edu-desc" data-i18n="edu1Desc">Multiplatform Application Development (DAM)</p>
+                        <div class="timeline-content glass-card hover-glow">
+                            <h3 data-en="IES Mare Nostrum (2025 – Present)" data-es="IES Mare Nostrum (2025 – Presente)"
+                                data-ar="IES Mare Nostrum (2025 – الحاضر)">IES Mare Nostrum (2025 – Present)</h3>
+                            <p data-en="Currently studying DAM (Multiplatform Application Development)"
+                                data-es="Estudiando actualmente DAM (Desarrollo de Aplicaciones Multiplataforma)"
+                                data-ar="أدرس حاليًا تطوير التطبيقات متعددة المنصات (DAM)">
+                                Currently studying DAM (Multiplatform Application Development)</p>
                         </div>
                     </div>
 
-                    <div class="base-card glass-panel edu-card gsap-reveal-diagonal">
-                        <div class="edu-icon-wrapper">
-                            <i class="fas fa-graduation-cap"></i>
+                    <!-- Education 2 -->
+                    <div class="timeline-item right animate-slide-right delay-2">
+                        <div class="timeline-node node-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
                         </div>
-                        <div class="edu-details">
-                            <h3 data-i18n="edu2School">IES Mare Nostrum</h3>
-                            <span class="edu-date" data-i18n="edu2Date">Past</span>
-                            <p class="edu-desc" data-i18n="edu2Desc">General Studies</p>
+                        <div class="timeline-content glass-card hover-glow">
+                            <h3 data-en="IES San Blas (2023 – 2025)" data-es="IES San Blas (2023 – 2025)"
+                                data-ar="IES San Blas (2023 – 2025)">IES San Blas (2023 – 2025)</h3>
+                            <p data-en="Completed Spanish Bachillerato" data-es="Bachillerato Español Completado"
+                                data-ar="أكملت البكالوريا الإسبانية">
+                                Completed Spanish Bachillerato</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section (Slide from RIGHT) -->
-        <section id="contact" class="contact gsap-section">
+        <!-- Projects Section -->
+        <section id="projects" class="timeline-section section-observe">
             <div class="container">
-                <!-- Using a specific wrapper for contact rather than base-card because of its unique split layout, but conforming to base principles -->
-                <div class="contact-frame base-card gsap-reveal-right">
+                <h2 class="section-title animate-fade-up">
+                    <span data-en="Professional Projects" data-es="Proyectos Profesionales"
+                        data-ar="مشاريع مهنية">Professional Projects</span>
+                    <div class="title-glow"></div>
+                </h2>
+
+                <div class="timeline">
+                    <!-- Project 1 -->
+                    <div class="timeline-item left animate-slide-left delay-1">
+                        <div class="timeline-node node-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <h3 data-en="Web Project for a Local Shop" data-es="Proyecto Web para una Tienda Local"
+                                data-ar="مشروع ويب لمتجر محلي">Web Project for a Local Shop</h3>
+                            <p data-en="Built an informational site for a local business to establish their online presence, using AI assistance for responsive design."
+                                data-es="Creé un sitio informativo para un negocio local para establecer su presencia en línea, utilizando asistencia de IA para un diseño responsivo."
+                                data-ar="أنشأت موقعًا إعلاميًا لشركة محلية لإثبات وجودها على الإنترنت، باستخدام الذكاء الاصطناعي لتصميم متجاوب.">
+                                Built an informational site for a local business to establish their online presence,
+                                using AI assistance for responsive design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="timeline-item right animate-slide-right delay-2">
+                        <div class="timeline-node node-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <h3 data-en="AI-assisted Portfolio Website" data-es="Sitio Web Portafolio Asistido por IA"
+                                data-ar="موقع الملف الشخصي بمساعدة الذكاء الاصطناعي">AI-assisted Portfolio Website</h3>
+                            <p data-en="Designed and developed this personal portfolio with AI guidance, focusing on modern aesthetics and cinematic animations."
+                                data-es="Diseñé y desarrollé este portafolio personal con la guía de IA, enfocándome en una estética moderna y animaciones cinematográficas."
+                                data-ar="صممت وطورت هذا الملف الشخصي بإرشاد الذكاء الاصطناعي، مع التركيز على الجماليات الحديثة والرسوم المتحركة السينمائية.">
+                                Designed and developed this personal portfolio with AI guidance, focusing on modern
+                                aesthetics and cinematic animations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="timeline-item left animate-slide-left delay-3">
+                        <div class="timeline-node node-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <h3 data-en="Informational Website for Community Business"
+                                data-es="Sitio Informativo para Negocio Comunitario" data-ar="موقع إعلامي لعمل مجتمعي">
+                                Informational Website for Community Business</h3>
+                            <p data-en="Created a centralized platform for community members to find relevant local business information easily."
+                                data-es="Creé una plataforma centralizada para que los miembros de la comunidad encuentren fácilmente información relevante sobre negocios locales."
+                                data-ar="أنشأت منصة مركزية لأعضاء المجتمع للعثور بسهولة على معلومات الأعمال المحلية ذات الصلة.">
+                                Created a centralized platform for community members to find relevant local business
+                                information easily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-observe">
+            <div class="container animate-fade-up">
+                <h2 class="section-title">
+                    <span data-en="Contact" data-es="Contacto" data-ar="اتصل بي">Contact</span>
+                    <div class="title-glow"></div>
+                </h2>
+
+                <div class="contact-card glass-card hover-parallax">
                     <div class="contact-info">
-                        <div class="section-header align-left">
-                            <h2 class="section-title" data-i18n="contactTitle">Contact Me</h2>
-                            <div class="title-underline" style="margin-left: 0;"></div>
-                        </div>
-                        <div class="info-items">
-                            <div class="info-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:mehdiaffane2020@gmail.com">mehdiaffane2020@gmail.com</a>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+34640605711">+34 640 60 57 11</a>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
-                        </div>
+                        <a href="mailto:mehdi.affane.dev@gmail.com" class="info-item link-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>mehdi.affane.dev@gmail.com</span>
+
+
+                        </a>
+                        <a href="tel:+34640605711" class="info-item link-item" dir="ltr">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <span dir="ltr">+34 640 60 57 11</span>
+                        </a>
                     </div>
 
-                    <div class="contact-form-wrapper glass-panel">
-                        <form id="contactForm" onsubmit="event.preventDefault();">
-                            <div class="input-container">
-                                <input type="text" id="name" required autocomplete="off">
-                                <label for="name" class="floating-label" data-i18n="contactName">Name</label>
-                                <span class="input-line"></span>
-                            </div>
-                            <div class="input-container">
-                                <input type="email" id="email" required autocomplete="off">
-                                <label for="email" class="floating-label" data-i18n="contactEmail">Email</label>
-                                <span class="input-line"></span>
-                            </div>
-                            <div class="input-container">
-                                <textarea id="message" required rows="4" autocomplete="off"></textarea>
-                                <label for="message" class="floating-label" data-i18n="contactMsg">Message</label>
-                                <span class="input-line"></span>
-                            </div>
-                            <button type="submit" class="submit-btn glow-hover" data-i18n="contactSend">Send
-                                Message</button>
-                        </form>
-                    </div>
+                    <form id="contact-form" class="contact-form" onsubmit="sendMail(event)">
+                        <div class="input-group">
+                            <input type="text" id="name" name="user_name" required placeholder=" ">
+                            <label for="name" data-en="Name" data-es="Nombre" data-ar="الاسم">Name</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="user_email" required placeholder=" ">
+                            <label for="email" data-en="Email" data-es="Correo Electrónico"
+                                data-ar="البريد الإلكتروني">Email</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message" data-en="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" aria-label="Send Message">
+                            <span data-en="Send Message" data-es="Enviar Mensaje" data-ar="إرسال الرسالة">Send
+                                Message</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </form>
                 </div>
             </div>
+            <!-- Extra padding at bottom so scrolling reaches past contact -->
+            <div style="height: 100px;"></div>
         </section>
     </main>
 
-    <!-- Digital Screen Assistant -->
-    <div id="screen-assistant" class="screen-assistant">
-        <div class="screen-speech-bubble" id="screen-speech"></div>
-        <div class="screen-monitor">
-            <div class="screen-inner">
-                <div class="screen-eyes">
-                    <div class="eye-box">
-                        <div class="pupil-dot"></div>
-                    </div>
-                    <div class="eye-box">
-                        <div class="pupil-dot"></div>
-                    </div>
+    <!-- Floating Digital Screen Assistant -->
+    <div class="floating-assistant" id="assistant">
+        <div class="speech-bubble" id="speech-bubble">
+            <span class="bubble-text">Hi, I'm the digital assistant!</span>
+        </div>
+        <div class="screen-body">
+            <div class="eyes-container">
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Script loaded at end -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("bAjbgy7uutM0lGyXR");
+        })();
+
+        function sendMail(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_zg2qear", "template_c9zlmbg", "#contact-form")
+                .then(function () {
+                    alert("Message sent successfully!");
+                    document.getElementById("contact-form").reset();
+                }, function (error) {
+                    alert("Failed to send message.");
+                    console.log(error);
+                });
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 

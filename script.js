@@ -1,348 +1,335 @@
-const translations = {
-    en: {
-        navHome: "Home", navAbout: "About", navSkills: "Skills",
-        navExperience: "Experience", navEducation: "Education", navContact: "Contact",
-        heroName: "Mehdi Affane",
-        heroSubtitle: "Software Development Student | Future Full-Stack Developer",
-        aboutText: "Passionate about technology since childhood and currently studying Multiplatform Application Development (DAM). I am building strong foundations in programming, databases and software design. I am seeking my first professional IT opportunity to contribute my discipline, analytical mindset and continuous growth mentality.",
-        progFundTitle: "Programming Fundamentals",
-        sJava: "Java (OOP Fundamentals)", sSql: "SQL & Relational Databases (MySQL)",
-        sHtml: "HTML5", sCss: "CSS3", sJs: "Basic JavaScript", sGit: "Git & GitHub",
-        softSkillsTitle: "Soft Skills",
-        ssDisc: "Discipline", ssAdapt: "Adaptability", ssLearn: "Continuous Learning",
-        ssAnaly: "Analytical Thinking", ssResp: "Responsibility", ssAlgo: "Algorithmic Thinking",
-        ssProblem: "Problem Solving", ssAgile: "Basic Agile Concepts",
-        exp1Role: "Delivery Driver", exp1Date: "2023 – Present",
-        exp2Role: "Warehouse Assistant", exp2Date: "2018 – 2025",
-        edu1School: "IES San Blas", edu1Date: "2025 – Present", edu1Desc: "Multiplatform Application Development (DAM)",
-        edu2School: "IES Mare Nostrum", edu2Date: "Past", edu2Desc: "General Studies",
-        contactTitle: "Contact Me", contactName: "Name", contactEmail: "Email", contactMsg: "Message", contactSend: "Send Message",
-
-        // Digital Assistant Speech
-        astHero: "Welcome. Let’s build something serious.",
-        astAbout: "Strong foundations are everything.",
-        astSkills: "The level keeps rising.",
-        astExp: "This is just the beginning.",
-        astEdu: "Transformation in progress.",
-        astContact: "Let’s create value together."
-    },
-    es: {
-        navHome: "Inicio", navAbout: "Sobre mí", navSkills: "Habilidades",
-        navExperience: "Experiencia", navEducation: "Educación", navContact: "Contacto",
-        heroName: "Mehdi Affane",
-        heroSubtitle: "Estudiante de Desarrollo de Software | Futuro Full-Stack Developer",
-        aboutText: "Apasionado por la tecnología desde la infancia y actualmente estudiando Desarrollo de Aplicaciones Multiplataforma (DAM). Construyendo bases sólidas en programación, bases de datos y diseño de software. Busco mi primera oportunidad profesional en TI para aportar mi disciplina, mentalidad analítica y deseo de crecimiento continuo.",
-        progFundTitle: "Fundamentos de Programación",
-        sJava: "Java (Fundamentos POO)", sSql: "SQL y Bases de Datos (MySQL)",
-        sHtml: "HTML5", sCss: "CSS3", sJs: "JavaScript Básico", sGit: "Git y GitHub",
-        softSkillsTitle: "Habilidades Blandas",
-        ssDisc: "Disciplina", ssAdapt: "Adaptabilidad", ssLearn: "Aprendizaje Continuo",
-        ssAnaly: "Pensamiento Analítico", ssResp: "Responsabilidad", ssAlgo: "Pensamiento Algorítmico",
-        ssProblem: "Resolución de Problemas", ssAgile: "Conceptos Básicos de Agile",
-        exp1Role: "Repartidor", exp1Date: "2023 – Presente",
-        exp2Role: "Mozo de Almacén", exp2Date: "2018 – 2025",
-        edu1School: "IES San Blas", edu1Date: "2025 – Presente", edu1Desc: "Desarrollo de Aplicaciones Multiplataforma (DAM)",
-        edu2School: "IES Mare Nostrum", edu2Date: "Anterior", edu2Desc: "Estudios Generales",
-        contactTitle: "Contáctame", contactName: "Nombre", contactEmail: "Correo", contactMsg: "Mensaje", contactSend: "Enviar Mensaje",
-
-        astHero: "Bienvenido. Construyamos algo serio.",
-        astAbout: "Unas bases sólidas lo son todo.",
-        astSkills: "El nivel sigue subiendo.",
-        astExp: "Esto es solo el comienzo.",
-        astEdu: "Transformación en progreso.",
-        astContact: "Vamos a crear valor juntos."
-    },
-    ar: {
-        navHome: "الرئيسية", navAbout: "نبذة عني", navSkills: "المهارات",
-        navExperience: "الخبرة", navEducation: "التعليم", navContact: "اتصل بنا",
-        heroName: "المهدي عفان",
-        heroSubtitle: "طالب تطوير برمجيات | مطور Full-Stack مستقبلي",
-        aboutText: "شغوف بالتكنولوجيا منذ الطفولة وأدرس حاليًا تطوير التطبيقات متعددة المنصات (DAM). أبني أسسًا قوية في البرمجة وقواعد البيانات وتصميم البرمجيات. أبحث عن فرصتي المهنية الأولى في مجال تكنولوجيا المعلومات للمساهمة بانضباطي وعقليتي التحليلية ورغبتي في النمو المستمر.",
-        progFundTitle: "أساسيات البرمجة",
-        sJava: "Java (أساسيات كائنية التوجه)", sSql: "SQL وقواعد البيانات (MySQL)",
-        sHtml: "HTML5", sCss: "CSS3", sJs: "JavaScript أساسي", sGit: "Git و GitHub",
-        softSkillsTitle: "المهارات الناعمة",
-        ssDisc: "الانضباط", ssAdapt: "القدرة على التكيف", ssLearn: "التعلم المستمر",
-        ssAnaly: "التفكير التحليلي", ssResp: "المسؤولية", ssAlgo: "التفكير الخوارزمي",
-        ssProblem: "حل المشكلات", ssAgile: "مفاهيم Agile الأساسية",
-        exp1Role: "عامل توصيل", exp1Date: "2023 – الحاضر",
-        exp2Role: "مساعد مستودع", exp2Date: "2018 – 2025",
-        edu1School: "معهد سان بلاس", edu1Date: "2025 – الحاضر", edu1Desc: "تطوير التطبيقات متعددة المنصات (DAM)",
-        edu2School: "معهد ماري نوستروم", edu2Date: "سابقًا", edu2Desc: "دراسات عامة",
-        contactTitle: "اتصل بي", contactName: "الاسم", contactEmail: "البريد الإلكتروني", contactMsg: "الرسالة", contactSend: "إرسال الرسالة",
-
-        astHero: "أهلاً بك. دعنا نبني شيئًا احترافيًا.",
-        astAbout: "الأسس القوية هي الأهم.",
-        astSkills: "المستوى في ارتفاع مستمر.",
-        astExp: "هذه فقط البداية.",
-        astEdu: "التحول قيد التقدم.",
-        astContact: "دعنا نخلق قيمة معًا."
-    }
-};
-
-const typedStrings = {
-    en: ["Passionate about Technology", "Building My Future in IT", "Learning. Improving. Growing."],
-    es: ["Apasionado por la Tecnología", "Construyendo mi futuro en IT", "Aprendiendo. Mejorando. Creciendo."],
-    ar: ["شغوف بالتكنولوجيا", "أبني مستقبلي في تقنية المعلومات", "أتعلم. أتحسن. أنمو."]
-};
-
-let currentLang = 'en';
-let typedInstance = null;
-
 document.addEventListener('DOMContentLoaded', () => {
-    initLanguageSwitcher();
-    initMobileMenu();
-    initTyped();
-    initGSAPAnimations();
-    initScreenAssistant();
+    // 1. Language Toggle
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const translatableElements = document.querySelectorAll('[data-en]');
 
-    // Header scroll background behavior
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
-    });
-});
+    const setLanguage = (lang) => {
+        // Update text directions and fonts
+        if (lang === 'ar') {
+            document.documentElement.setAttribute('lang', 'ar');
+            document.body.classList.add('rtl-layout');
 
-function initLanguageSwitcher() {
-    const langSwitch = document.getElementById('lang-switch');
-    langSwitch.addEventListener('change', (e) => {
-        currentLang = e.target.value;
-        const root = document.documentElement;
-
-        root.setAttribute('lang', currentLang);
-        root.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-
-        // Update all translation texts
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[currentLang][key]) {
-                // Skip the container for heroName in standard innerText swap, 
-                // because we need the span.char logic to remain intact.
-                if (key === 'heroName') {
-                    // Update the array & DOM for GSAP animated text dynamically
-                    const heroNameTextContainer = document.querySelector('.name-text');
-                    const newHeroName = translations[currentLang][key].split("");
-                    heroNameTextContainer.innerHTML = "";
-                    newHeroName.forEach(char => {
-                        const span = document.createElement("span");
-                        span.className = "char";
-                        span.style.opacity = "1"; // instantly visible post-load
-                        span.style.transform = "translateY(0)";
-                        span.innerHTML = char === " " ? "&nbsp;" : char;
-                        heroNameTextContainer.appendChild(span);
-                    });
-                } else {
-                    el.innerText = translations[currentLang][key];
+            translatableElements.forEach(el => {
+                if (el.tagName.toLowerCase() !== 'input' && el.tagName.toLowerCase() !== 'textarea') {
+                    el.classList.add('rtl-text');
                 }
-            }
-        });
-
-        // Restart Typed
-        initTyped();
-    });
-}
-
-function initTyped() {
-    if (typedInstance) typedInstance.destroy();
-    typedInstance = new Typed('#typed-output', {
-        strings: typedStrings[currentLang],
-        typeSpeed: 40,
-        backSpeed: 25,
-        backDelay: 2000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|'
-    });
-}
-
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = hamburger.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.querySelector('i').classList.replace('fa-times', 'fa-bars');
-        });
-    });
-}
-
-// -----------------------------------------------------
-// GSAP & ScrollTrigger Animations
-// -----------------------------------------------------
-function initGSAPAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Initial Split text setup for hero name on load
-    const heroNameTextContainer = document.querySelector('.name-text');
-    const heroNameText = translations[currentLang]['heroName'].split("");
-    heroNameTextContainer.innerHTML = "";
-    heroNameText.forEach(char => {
-        const span = document.createElement("span");
-        span.className = "char";
-        span.innerHTML = char === " " ? "&nbsp;" : char;
-        heroNameTextContainer.appendChild(span);
-    });
-
-    // 1. Hero Reveal Series
-    const tlHero = gsap.timeline();
-
-    tlHero
-        .fromTo(".hero-shapes", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" })
-        .fromTo(".name-text .char", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.05, ease: "back.out(1.7)" }, "-=1.5")
-        .to(".name-glow", { width: "100%", duration: 1, ease: "power2.out" }, "-=0.5")
-        .fromTo(".hero-subtitle", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.2")
-        .fromTo(".hero-typing-container", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.4")
-        .fromTo(".hero-scroll", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, "-=0.2");
-
-    // General Section Titles
-    gsap.utils.toArray('.section-header').forEach(header => {
-        gsap.fromTo(header.querySelector('.section-title'),
-            { y: 30, opacity: 0 },
-            {
-                y: 0, opacity: 1, duration: 0.8, ease: "power2.out",
-                scrollTrigger: { trigger: header, start: "top 85%" }
-            }
-        );
-        gsap.to(header.querySelector('.title-underline'),
-            {
-                width: "80px", duration: 1, ease: "power2.out",
-                scrollTrigger: { trigger: header, start: "top 85%" }
-            }
-        );
-    });
-
-    // About Section (Slide from LEFT)
-    gsap.fromTo(".gsap-reveal-left",
-        { x: -50, opacity: 0 },
-        {
-            x: 0, opacity: 1, duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: "#about", start: "top 80%" }
-        });
-
-    // Skills Section (Slide from RIGHT)
-    gsap.fromTo(".gsap-reveal-right",
-        { x: 50, opacity: 0 },
-        {
-            x: 0, opacity: 1, duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: "#skills", start: "top 80%" }
-        });
-
-    // Skills Progress Bars Fill
-    gsap.utils.toArray('.progress-fill').forEach(bar => {
-        gsap.to(bar, {
-            width: bar.getAttribute('data-width'),
-            duration: 1.5, ease: "power3.out",
-            scrollTrigger: { trigger: "#skills", start: "top 70%" }
-        });
-    });
-
-    // Skills Tags scale up
-    gsap.fromTo(".tag",
-        { scale: 0.8, opacity: 0 },
-        {
-            scale: 1, opacity: 1, duration: 0.5, stagger: 0.05, ease: "back.out(1.5)",
-            scrollTrigger: { trigger: ".tags-container", start: "top 85%" }
-        });
-
-    // Experience Section (Zoom/Depth)
-    gsap.utils.toArray('.gsap-reveal-depth').forEach((node, i) => {
-        gsap.fromTo(node,
-            { scale: 0.9, opacity: 0, z: -50 },
-            {
-                scale: 1, opacity: 1, z: 0, duration: 1, delay: i * 0.15, ease: "power3.out",
-                scrollTrigger: { trigger: "#experience", start: "top 75%" }
             });
-    });
+            // Update inputs RTL class manually based on input-group elements
+            document.querySelectorAll('.input-group input, .input-group textarea, .input-group label').forEach(el => el.classList.add('rtl-text'));
+        } else {
+            document.documentElement.setAttribute('lang', lang);
+            document.body.classList.remove('rtl-layout');
 
-    // Education Section (Slide Diagonal)
-    gsap.utils.toArray('.gsap-reveal-diagonal').forEach((card, i) => {
-        gsap.fromTo(card,
-            { x: -30, y: 30, opacity: 0 },
-            {
-                x: 0, y: 0, opacity: 1, duration: 1, delay: i * 0.15, ease: "power3.out",
-                scrollTrigger: { trigger: "#education", start: "top 80%" }
+            translatableElements.forEach(el => {
+                if (el.tagName.toLowerCase() !== 'input' && el.tagName.toLowerCase() !== 'textarea') {
+                    el.classList.remove('rtl-text');
+                }
             });
-    });
+            document.querySelectorAll('.input-group input, .input-group textarea, .input-group label').forEach(el => el.classList.remove('rtl-text'));
+        }
 
-    // Contact Frame (Slide from RIGHT)
-    gsap.fromTo(".contact-frame.gsap-reveal-right",
-        { x: 50, opacity: 0 },
-        {
-            x: 0, opacity: 1, duration: 1, ease: "power3.out",
-            scrollTrigger: { trigger: "#contact", start: "top 80%" }
+        // Update active button
+        langBtns.forEach(btn => {
+            if (btn.dataset.lang === lang) btn.classList.add('active');
+            else btn.classList.remove('active');
         });
-}
 
-// -----------------------------------------------------
-// Digital Screen Assistant Interactions
-// -----------------------------------------------------
-function initScreenAssistant() {
-    const screenMonitor = document.querySelector('.screen-monitor');
-    const speechBubble = document.getElementById('screen-speech');
-    const pupils = document.querySelectorAll('.pupil-dot');
-    let hideTimeout;
+        // Update texts
+        translatableElements.forEach(el => {
+            if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+                // Keep input value empty by default, handle placeholders natively via CSS empty checks
+            } else {
+                el.textContent = el.dataset[lang] || el.textContent;
+            }
+        });
 
-    // Show text bubble logic
-    const showSpeech = (key) => {
-        const text = translations[currentLang][key];
-        if (!text) return;
-
-        speechBubble.innerText = text;
-        speechBubble.classList.add('show');
-
-        // Tilt animation on speak
-        gsap.fromTo(screenMonitor,
-            { rotation: 0 },
-            { rotation: -5, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" }
-        );
-
-        clearTimeout(hideTimeout);
-        hideTimeout = setTimeout(() => {
-            speechBubble.classList.remove('show');
-        }, 3500);
+        // Update typewriter
+        startTypewriter(lang);
     };
 
-    // Tracking mouse for pupil movement
-    window.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 6; // range -3 to 3
-        const y = (e.clientY / window.innerHeight - 0.5) * 4; // range -2 to 2
-
-        pupils.forEach(pupil => {
-            // Constrain limits implicitly by low multiplier
-            pupil.style.transform = `translate(${x}px, ${y}px)`;
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            setLanguage(btn.dataset.lang);
         });
     });
 
-    // Section entry triggers
-    const triggerMap = {
-        'home': 'astHero',
-        'about': 'astAbout',
-        'skills': 'astSkills',
-        'experience': 'astExp',
-        'education': 'astEdu',
-        'contact': 'astContact'
+    // 2. Typewriter Effect
+    const typeWriterEl = document.getElementById('typewriter');
+    const strings = {
+        en: [
+            "Learning daily",
+            "Building AI-assisted projects",
+            "Improving in C#, JavaScript, HTML, CSS, SQL, GitHub"
+        ],
+        es: [
+            "Aprendiendo diariamente",
+            "Construyendo proyectos asistidos por IA",
+            "Mejorando en C#, JavaScript, HTML, CSS, SQL, GitHub"
+        ],
+        ar: [
+            "أتعلم يومياً",
+            "أبني مشاريع بمساعدة الذكاء الاصطناعي",
+            "أطور مهاراتي في C#, JavaScript, HTML, CSS, SQL, GitHub"
+        ]
+    };
+
+    let typeTimerId;
+    let typeCharIdx = 0;
+    let typeStrIdx = 0;
+    let isDeleting = false;
+    let currentLang = 'en';
+
+    function startTypewriter(lang) {
+        currentLang = lang;
+        clearTimeout(typeTimerId);
+        typeCharIdx = 0;
+        typeStrIdx = 0;
+        isDeleting = false;
+        typeWriterEl.textContent = '';
+        typeLoop();
+    }
+
+    function typeLoop() {
+        const currentStrings = strings[currentLang];
+        const fullStr = currentStrings[typeStrIdx];
+
+        if (isDeleting) {
+            typeWriterEl.textContent = fullStr.substring(0, typeCharIdx - 1);
+            typeCharIdx--;
+        } else {
+            typeWriterEl.textContent = fullStr.substring(0, typeCharIdx + 1);
+            typeCharIdx++;
+        }
+
+        let typeSpeed = isDeleting ? 30 : 60;
+
+        if (!isDeleting && typeCharIdx === fullStr.length) {
+            typeSpeed = 2500; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && typeCharIdx === 0) {
+            isDeleting = false;
+            typeStrIdx = (typeStrIdx + 1) % currentStrings.length;
+            typeSpeed = 600; // Pause before new word
+        }
+
+        typeTimerId = setTimeout(typeLoop, typeSpeed);
+    }
+
+    startTypewriter('en');
+
+    // 3. Intersection Observer for Scroll Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
-                const id = entry.target.id;
-                if (triggerMap[id]) showSpeech(triggerMap[id]);
+            if (entry.isIntersecting) {
+                // Add in-view to children
+                const animates = entry.target.querySelectorAll('.animate-slide-left, .animate-slide-right, .animate-fade-up, .title-glow, .name-underline');
+                animates.forEach(el => el.classList.add('in-view'));
+
+                // If skills section, animate bars
+                if (entry.target.id === 'skills') {
+                    const bars = entry.target.querySelectorAll('.skill-bar');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.dataset.width;
+                    });
+                }
             }
         });
-    }, { threshold: 0.4 });
+    }, observerOptions);
 
-    document.querySelectorAll('section').forEach(sec => sectionObserver.observe(sec));
+    document.querySelectorAll('.section-observe').forEach(section => {
+        sectionObserver.observe(section);
+    });
 
-    // Initial load speech delay
-    setTimeout(() => { showSpeech('astHero'); }, 2500);
-}
+    // 4. Floating Assistant Logic
+    const eyesContainer = document.querySelector('.eyes-container');
+    const assistant = document.getElementById('assistant');
+    const bubble = document.getElementById('speech-bubble');
+    const bubbleText = bubble.querySelector('.bubble-text');
+
+    // Eyes follow mouse and cards 3D hover parallax
+    const cardsParallax = document.querySelectorAll('.hover-parallax');
+
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 8; // Max move 4px left/right
+        const y = (e.clientY / window.innerHeight - 0.5) * 6; // Max move 3px up/down
+
+        eyesContainer.style.transform = `translate(${x}px, ${y}px)`;
+
+        // 3D Parallax on specific Cards
+        cardsParallax.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            // Check if mouse is over the card to apply the 3d rotate effect
+            if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                const cardX = (e.clientX - rect.left) / rect.width - 0.5;
+                const cardY = (e.clientY - rect.top) / rect.height - 0.5;
+                const rotateY = cardX * 10;
+                const rotateX = cardY * -10;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            } else {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            }
+        });
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cardsParallax.forEach(card => card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`);
+    });
+
+    // Assistant comments dictionary
+    const commentsData = {
+        hero: {
+            en: "Welcome to my digital space.",
+            es: "Bienvenido a mi espacio digital.",
+            ar: "مرحباً بك في مساحتي الرقمية."
+        },
+        about: {
+            en: "That’s me, still learning, growing daily.",
+            es: "Ese soy yo, sigo aprendiendo, creciendo a diario.",
+            ar: "هذا أنا، لا أزال أتعلم وأنمو يومياً."
+        },
+        skills: {
+            en: "Progress is steady and consistent.",
+            es: "El progreso es constante y firme.",
+            ar: "التقدم ثابت ومستمر."
+        },
+        languages: {
+            en: "Communication opens many doors.",
+            es: "La comunicación abre muchas puertas.",
+            ar: "التواصل يفتح أبواباً كثيرة."
+        },
+        education: {
+            en: "Building a strong academic foundation.",
+            es: "Construyendo una sólida base académica.",
+            ar: "بناء أساس أكاديمي قوي."
+        },
+        projects: {
+            en: "Building real projects while learning.",
+            es: "Construyendo proyectos reales mientras aprendo.",
+            ar: "بناء مشاريع حقيقية أثناء التعلم."
+        },
+
+        contact: {
+            en: "Let’s create value together.",
+            es: "Vamos a crear valor juntos.",
+            ar: "دعونا نصنع قيمة معاً."
+        }
+    };
+
+    let lastScrollY = window.scrollY;
+    let tiltTimeout;
+    const sections = document.querySelectorAll('.section-observe');
+    let currentActiveSectionId = 'hero';
+
+    // Parallax background elements
+    const parallaxBgs = document.querySelectorAll('.parallax-bg, .parallax-content');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Background Parallax
+        parallaxBgs.forEach(el => {
+            const speed = parseFloat(el.dataset.speed);
+            const yPos = -(scrollY * speed);
+            el.style.transform = `translateY(${yPos}px)`;
+        });
+
+        const delta = scrollY - lastScrollY;
+
+        // Tilt more if scrolling faster
+        let rotZ = delta > 0 ? Math.min(delta * 0.15, 6) : Math.max(delta * 0.15, -6);
+        if (Math.abs(delta) < 2) rotZ = 0;
+
+        // Only check class for layout specific items if strictly needed
+        if (document.body.classList.contains('rtl-layout')) {
+            // Note: with explicit text dir we aren't completely breaking timeline mirroring coordinates, just reversing tilt
+            rotZ = -rotZ;
+        }
+
+        assistant.style.transform = `rotate(${rotZ}deg)`;
+
+        clearTimeout(tiltTimeout);
+        tiltTimeout = setTimeout(() => {
+            assistant.style.transform = `rotate(0deg)`;
+        }, 150);
+
+        lastScrollY = scrollY;
+
+        // Find visible section
+        let currentSection = sections[0];
+        let minDistance = Infinity;
+
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect();
+            const distance = Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2);
+            if (distance < minDistance) {
+                minDistance = distance;
+                currentSection = sec;
+            }
+        });
+
+        const newSectionId = currentSection.id;
+
+        if (currentActiveSectionId !== newSectionId) {
+            currentActiveSectionId = newSectionId;
+            updateBubbleText();
+        }
+    });
+
+    function updateBubbleText() {
+        const commentObj = commentsData[currentActiveSectionId];
+        if (!commentObj) return;
+
+        const newComment = commentObj[currentLang];
+
+        if (bubbleText.textContent !== newComment) {
+            bubble.classList.remove('visible');
+            setTimeout(() => {
+                bubbleText.textContent = newComment;
+                bubble.classList.add('visible');
+            }, 300);
+        }
+    }
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            updateBubbleText();
+        });
+    });
+
+    setTimeout(() => {
+        updateBubbleText();
+        bubble.classList.add('visible');
+    }, 1000);
+
+    // 5. Generate Particles in Background
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        // Random positioning
+        particle.style.left = `${Math.random() * 100}%`;
+
+        // Random animation delay and duration
+        const duration = 10 + Math.random() * 20;
+        const delay = Math.random() * -20;
+
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+
+        // Random slight scaling
+        const scale = 0.5 + Math.random() * 1;
+        particle.style.width = `${scale * 3}px`;
+        particle.style.height = `${scale * 3}px`;
+
+        particlesContainer.appendChild(particle);
+    }
+});
